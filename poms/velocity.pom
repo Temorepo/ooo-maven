@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.velocity</groupId>
-  <artifactId>velocity-ooo</artifactId>
-  <version>1.6.4</version>
+  <artifactId>velocity</artifactId>
+  <version>1.6.4-ooo</version>
   <packaging>jar</packaging>
 
   <name>Apache Velocity</name>
