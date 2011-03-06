@@ -8,7 +8,7 @@
   <condition property="maven-ant.exists"><available file="${maven-ant.jar}"/></condition>
   <target name="-download-maven-ant" unless="maven-ant.exists">
     <mkdir dir="${maven-ant.dir}"/>
-    <get src="${maven-ant.url}/maven-ant-tasks-${maven-ant.vers}.jar" 
+    <get src="${maven-ant.url}/maven-ant-tasks-${maven-ant.vers}.jar"
          dest="${maven-ant.jar}" usetimestamp="true"/>
   </target>
 
@@ -20,10 +20,10 @@
   <target name="install" depends="-init-maven-ant"
           description="Installs a Maven artifact into the repository.">
     <fail unless="pom">Specify the pom to be installed with -Dpom. For example:
-      ant -Dpom=jogg -Dfile=jogg.ext install</fail>
+      ant -Dpom=poms/jogg.pom -Dfile=jogg.ext install</fail>
     <fail unless="file">Specify the file to be installed with -Dfile. For example:
       ant -Dpom=jogg -Dfile=jogg.ext install</fail>
-    <artifact:pom id="pom" file="poms/${pom}.pom"/>
+    <artifact:pom id="pom" file="${pom}"/>
     <artifact:deploy file="${file}" uniqueVersion="false">
       <remoteRepository url="file://repository"/>
       <pom refid="pom"/>
