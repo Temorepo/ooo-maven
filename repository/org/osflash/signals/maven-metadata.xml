@@ -6,7 +6,8 @@
   <versioning>
     <versions>
       <version>0.8</version>
+      <version>0.8-varargs</version>
     </versions>
-    <lastUpdated>20101119040958</lastUpdated>
+    <lastUpdated>20110331211411</lastUpdated>
   </versioning>
 </metadata>
