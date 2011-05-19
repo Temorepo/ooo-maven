@@ -1,0 +1,9 @@
+To install a new artifact, create a POM in the poms/ directory, and then
+install it into the repository using Ant.
+
+For example, create poms/foo.pom and then invoke:
+
+% ant -Dpom=poms/foo.pom -Dfile=wherever/foo.jar install
+
+Then commit the pom and the updates in the repository/ directory. The original
+file supplied via -Dfile may be discarded.
