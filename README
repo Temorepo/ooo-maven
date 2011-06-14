@@ -5,5 +5,9 @@ For example, create poms/foo.pom and then invoke:
 
 % ant -Dpom=poms/foo.pom -Dfile=wherever/foo.jar install
 
+To also install sources, include another parameter:
+
+% ant -Dpom=poms/foo.pom -Dfile=wherever/foo.jar -Dsrc=wherever/foo-sources.jar install
+
 Then commit the pom and the updates in the repository/ directory. The original
 file supplied via -Dfile may be discarded.
