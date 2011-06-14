@@ -6,27 +6,30 @@
   <property name="maven-ant.url"
             value="http://mirrors.ibiblio.org/pub/mirrors/apache/maven/binaries"/>
   <condition property="maven-ant.exists"><available file="${maven-ant.jar}"/></condition>
-  <target name="-download-maven-ant" unless="maven-ant.exists">
-    <mkdir dir="${maven-ant.dir}"/>
-    <get src="${maven-ant.url}/maven-ant-tasks-${maven-ant.vers}.jar"
-         dest="${maven-ant.jar}" usetimestamp="true"/>
-  </target>
 
-  <target name="-init-maven-ant" depends="-download-maven-ant">
-    <taskdef resource="org/apache/maven/artifact/ant/antlib.xml"
-             uri="urn:maven-artifact-ant" classpath="${maven-ant.jar}"/>
-  </target>
+  <property name="ooo-build.vers" value="2.2"/>
+  <ant antfile="bootstrap.xml"/>
+  <import file="${user.home}/.m2/ooo-build/${ooo-build.vers}/ooo-build.xml"/>
 
-  <target name="install" depends="-init-maven-ant"
+  <target name="install" depends="-init-contrib"
           description="Installs a Maven artifact into the repository.">
+    <property name="src" value=""/>
     <fail unless="pom">Specify the pom to be installed with -Dpom. For example:
       ant -Dpom=poms/jogg.pom -Dfile=jogg.ext install</fail>
     <fail unless="file">Specify the file to be installed with -Dfile. For example:
       ant -Dpom=jogg -Dfile=jogg.ext install</fail>
     <artifact:pom id="pom" file="${pom}"/>
-    <artifact:deploy file="${file}" uniqueVersion="false">
-      <remoteRepository url="file://repository"/>
-      <pom refid="pom"/>
-    </artifact:deploy>
+    <if><equals arg1="${src}" arg2=""/><then>
+      <artifact:deploy file="${file}" uniqueVersion="false">
+        <remoteRepository url="file://repository"/>
+        <pom refid="pom"/>
+      </artifact:deploy>
+    </then><else>
+      <artifact:deploy file="${file}" uniqueVersion="false">
+        <remoteRepository url="file://repository"/>
+        <pom refid="pom"/>
+        <attach file="${src}" type="jar" classifier="sources"/>
+      </artifact:deploy>
+    </else></if>
   </target>
 </project>
