@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.facebook.api</groupId>
-  <artifactId>facebook-api</artifactId>
+  <artifactId>Facebook</artifactId>
   <version>20120626</version>
   <name>Facebook iOS API</name>
   <packaging>dll</packaging>
