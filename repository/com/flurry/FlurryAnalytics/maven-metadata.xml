@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.flurry</groupId>
+  <artifactId>FlurryAnalytics</artifactId>
+  <version>20120928</version>
+  <versioning>
+    <versions>
+      <version>20120928</version>
+    </versions>
+    <lastUpdated>20120929004413</lastUpdated>
+  </versioning>
+</metadata>
