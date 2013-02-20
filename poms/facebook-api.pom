@@ -4,7 +4,7 @@
 
   <groupId>com.facebook.api</groupId>
   <artifactId>Facebook</artifactId>
-  <version>3.1.1</version>
+  <version>3.1.1-1</version>
   <name>Facebook iOS API</name>
   <packaging>dll</packaging>
 

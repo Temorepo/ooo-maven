@@ -4,7 +4,7 @@
 
   <groupId>com.flurry</groupId>
   <artifactId>FlurryAnalytics</artifactId>
-  <version>4.1.0</version>
+  <version>4.1.0-1</version>
   <name>Flurry Analytics iOS API</name>
   <packaging>dll</packaging>
 
