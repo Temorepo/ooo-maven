@@ -4,7 +4,7 @@
 
   <groupId>com.facebook.ios</groupId>
   <artifactId>MonoTouch.FacebookConnect</artifactId>
-  <version>3.5.2</version>
+  <version>3.8</version>
   <name>MonoTouch Binding for Facebook Connect iOS SDK</name>
   <packaging>dll</packaging>
 
