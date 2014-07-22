@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.iddiction.xplode</groupId>
+  <groupId>com.iddiction</groupId>
   <artifactId>xplode</artifactId>
   <versioning>
     <release>1.2.1</release>
